@@ -1,0 +1,11 @@
+.categoryMenu a {
+  color: white !important;
+}
+
+.breakWord {
+  word-wrap: break-word;
+}
+
+.posterImage {
+  box-shadow: 2px 4px 4px #111;
+}

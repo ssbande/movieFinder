@@ -1,0 +1,3 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`All Filter options for the app should show all filter options correctly 1`] = `ShallowWrapper {}`;

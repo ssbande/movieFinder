@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`List Data tests should render correctly for TV shows view 1`] = `ShallowWrapper {}`;
+
+exports[`List Data tests should render correctly for movie view 1`] = `ShallowWrapper {}`;
+
+exports[`List Data tests should render correctly for no data view 1`] = `ShallowWrapper {}`;
+
+exports[`List Data tests should render correctly for person view 1`] = `ShallowWrapper {}`;
