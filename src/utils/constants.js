@@ -43,6 +43,7 @@ export default {
     getData: 'GET_DATA',
     getDetails: 'GET_DETAILS',
     setSubmitted: 'SET_SUBMITTED',
+    setError: 'SET_ERROR',
     setFilter: 'SET_FILTER',
     setQuery: 'SET_USER_QUERY',
     suggestionsfetched: 'SUGGESTIONS_RECEIVED',

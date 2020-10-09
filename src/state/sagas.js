@@ -3,7 +3,7 @@ import constants from '../utils/constants';
 import { callApi } from '../utils/helpers';
 import { getFilter } from './selectors';
 
-const { actionTypes: { getData, getDetails }, config, addToResponse } = constants;
+const { actionTypes: { getData, getDetails, setError }, config, addToResponse } = constants;
 
 export function* fetchData(action) {
   try {
@@ -17,15 +17,15 @@ export function* fetchData(action) {
     switch (filter) {
       case movie.category:
         movies = yield callApi({ ...action, key: movie.category });
-        returnType = movie.actionTypes.success;
+        returnType = movie.successType;
         break;
       case person.category: 
         artists = yield callApi({ ...action, key: person.category });
-        returnType = person.actionTypes.success;
+        returnType = person.successType;
         break;
       case tv.category:
         shows = yield callApi({ ...action, key: tv.category });
-        returnType = tv.actionTypes.success;
+        returnType = tv.successType;
         break;
       case allFilters.category:
       default:
@@ -34,7 +34,7 @@ export function* fetchData(action) {
           yield callApi({ ...action, key: tv.category }),
           yield callApi({ ...action, key: person.category })
         ])
-        returnType = allFilters.actionTypes.success;
+        returnType = allFilters.successType;
         break;
     }
 
@@ -42,6 +42,7 @@ export function* fetchData(action) {
     yield put({ type: returnType, res: { movies, shows, artists } })
   } catch (error) {
     console.log('error in suggestion fetch: ', error);
+    yield put({ type: setError });
   }
 }
 
@@ -55,6 +56,7 @@ export function* fetchDetails(action) {
     yield put({ type: "DETAILS_RECEIVED", res: json, });
   } catch (error) {
     console.log('error occured: ', error);
+    yield put({ type: setError });
   }
 }
 

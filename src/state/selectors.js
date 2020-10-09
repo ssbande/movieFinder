@@ -10,6 +10,7 @@ export const getMovies = state => get(state, 'movies.results', []);
 export const getShows = state => get(state, 'shows.results', []);
 export const getArtists = state => get(state, 'artists.results', []);
 export const getDetailInfo = state => get(state, 'detailInfo', null);
+export const getError = state => get(state, 'error', false);
 
 export const getInitialMenu = state => {
   const filter = getFilter(state);
